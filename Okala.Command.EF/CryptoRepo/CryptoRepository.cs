@@ -22,7 +22,10 @@ public class CryptoRepository : ICryptoRepository
 
     public Task<Crypto> GetByName(string name, CancellationToken token)
     {
-        return Task.FromResult( ctx.cryptos.Where(c=>c.Symbol.ToLower() == name.ToLower()).LastOrDefault()
+        return Task.FromResult( ctx.cryptos
+            .Where(c=>c.Symbol.ToLower() == name.ToLower())
+            .OrderBy(c=>c.DateTime)
+            .FirstOrDefault()
             ?? throw new KeyNotFoundException());
     }
     public Task<List<Crypto>> GetListByName(string name, CancellationToken token)
