@@ -38,8 +38,7 @@ It was an interesting experience and helped me understand myself better.
     "architecture": ["Clean Architecture", "CQRS", "DDD"],
     "database": ["SQL"]
   },
-  "softSkills": ["problem_solving", "flexibilities", "team-working"],
- 
+  "softSkills": ["problem_solving", "flexibilities", "team-working"] 
 }
 
 
