@@ -23,7 +23,7 @@ public class CryptocurrencyController :BaseController
         var result = await Mediator.Send(query);
         return Ok(result);
     }
-    [HttpGet("by-name")]
+    [HttpGet("by-Symbol")]
     public async Task<ActionResult<GetCryptoDto>> Get([FromQuery] GetCryptoByNameQuery query)
     {
         var result = await Mediator.Send(query);
