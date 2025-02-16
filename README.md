@@ -7,6 +7,7 @@ I completed your submitted task in two days, taking approximately 6 to 8 hours.
 If I had more time, I would definitely use Dapper for reading from the database.
 I would spend more time on reading data from APIs.
 I would also implement authentication using JWT in the project.
+I would also Use Unit Testing for decrese risks.
 
 2-
 The most useful part I used in this project was implementing MediatR to achieve CQRS.
