@@ -24,7 +24,7 @@ public class CryptoRepository : ICryptoRepository
     {
         return Task.FromResult( ctx.cryptos
             .Where(c=>c.Symbol.ToLower() == name.ToLower())
-            .OrderBy(c=>c.DateTime)
+            .OrderByDescending(c=>c.Id)
             .FirstOrDefault()
             ?? throw new KeyNotFoundException());
     }
