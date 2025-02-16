@@ -23,8 +23,17 @@ public class GetCryptoQueryHandler :
     {
         
        var result= await cryptoRepository.Get(request.Id, cancellationToken);
-        GetCryptoDto getCryptoDto = new GetCryptoDto 
-        { Id=result.Id , Symbol=result.Symbol,Price=result.PriceUSD,DateTime=result.DateTime };
+        GetCryptoDto getCryptoDto = new GetCryptoDto
+        {
+            Id = result.Id,
+            Symbol = result.Symbol,
+            PriceUSD = result.PriceUSD,
+            PriceAUD = result.PriceAUD ?? 0,
+            PriceBRL = result.PriceBRL ?? 0,
+            PriceEUR = result.PriceEUR ?? 0,
+            PriceGBP = result.PriceGBP ?? 0,
+            DateTime = result.DateTime
+        };
 
         return getCryptoDto;
     }
@@ -33,7 +42,16 @@ public class GetCryptoQueryHandler :
     {
         var result = await cryptoRepository.GetByName(request.Symbol, cancellationToken);
         GetCryptoDto getCryptoDto = new GetCryptoDto
-        { Id = result.Id, Symbol = result.Symbol, Price = result.PriceUSD, DateTime = result.DateTime };
+        {
+            Id = result.Id,
+            Symbol = result.Symbol,
+            PriceUSD = result.PriceUSD,
+            PriceAUD = result.PriceAUD ?? 0,
+            PriceBRL = result.PriceBRL ?? 0,
+            PriceEUR = result.PriceEUR ?? 0,
+            PriceGBP = result.PriceGBP ?? 0,
+            DateTime = result.DateTime
+        };
 
         return getCryptoDto;
     }
